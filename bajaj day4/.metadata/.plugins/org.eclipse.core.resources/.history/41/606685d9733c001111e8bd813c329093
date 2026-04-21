@@ -1,0 +1,11 @@
+package com.Day4.org;
+import static java.lang.Math.*;
+
+public class Main {
+	
+	public static void main() {
+		System.out.println(min( 4 , 11 ));
+		System.out.println(" ji ");
+	}
+
+}

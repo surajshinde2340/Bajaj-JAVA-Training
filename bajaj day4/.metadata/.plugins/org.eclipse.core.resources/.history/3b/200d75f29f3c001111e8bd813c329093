@@ -1,0 +1,18 @@
+package excel;
+
+public class Customer {
+	 private int custId;
+	 private String custName;
+	 private  String custAddress;
+	 private  long mobile ;
+	 public Customer(int custId, String custName, String custAddress, long mobile) {
+		
+		this.custId = custId;
+		this.custName = custName;
+		this.custAddress = custAddress;
+		this.mobile = mobile;
+	 }
+	 
+	 
+
+}

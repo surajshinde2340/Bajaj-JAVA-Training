@@ -1,0 +1,9 @@
+package com.Day4.org;
+import static java.util.Math.*;
+public class Main {
+	
+	public static void main() {
+		System.out.println(" ji ");
+	}
+
+}

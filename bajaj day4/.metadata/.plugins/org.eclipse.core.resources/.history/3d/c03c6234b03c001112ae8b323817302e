@@ -1,0 +1,29 @@
+package com.bajaj;
+
+import java.util.ArrayList;
+
+class GenericStack<T>{ 
+	
+	ArrayList<T> sp ;
+	
+    void push( T ele ) { 
+    	sp.add(ele);
+    }
+	
+	GenericStack(  ){ 
+		sp = new ArrayList<>();
+	}
+	
+	
+	
+	
+}
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

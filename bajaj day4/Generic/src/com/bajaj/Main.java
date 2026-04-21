@@ -1,0 +1,139 @@
+package com.bajaj;
+
+import java.util.ArrayList;
+import java.util.NoSuchElementException;
+
+class Stack<T> {
+    private ArrayList<T> items;
+    
+    public Stack() {
+        this.items = new ArrayList<T>();
+    }
+    
+    public boolean isEmpty() {
+        return (this.items.isEmpty());
+    }
+
+    public void push(T item) {
+        this.items.add(item);
+    }
+    
+    public T pop() {
+        if (this.isEmpty()) {
+            throw new NoSuchElementException("Stack is empty.");
+        }
+        return this.items.remove(items.size() - 1);
+    }
+
+    public T peek() {
+        if (this.isEmpty()) {
+            throw new NoSuchElementException("Stack is empty.");
+        }
+        return this.items.get(items.size() - 1);
+    }
+
+   
+    public int size() {
+        return this.items.size();
+    }
+
+    public String toString() {
+
+        if (!this.items.isEmpty()) {
+            String arrString = this.items.toString();
+            return "bottom ->" + arrString + "<- top";
+        } else {
+            return "<<empty stack>>";
+        }
+    }
+}
+
+public class Main {
+	public static void main(String[] args) {
+
+        Stack<String> s = new Stack<>();
+        System.out.println("isEmpty returns " + s.isEmpty());
+
+        s.push("java");
+        s.push("keyboard");
+        System.out.println("Top of stack is " + s.peek());
+        s.push("computer");
+        System.out.println("Size of stack is " + s.size());
+        System.out.println("Current stack is: " + s);
+
+        s.push("program");
+        System.out.println("Current stack is: " + s);
+
+        System.out.println("Pop: " + s.pop());
+        System.out.println("Pop: " + s.pop());
+
+        System.out.println("Size of stack is " + s.size());
+        System.out.println("Current stack is: " + s);
+        
+        
+        Stack<Integer> st=new Stack<>();
+        st.push(100);
+        st.push(200);
+        st.push(500);
+        
+        System.out.println(st);
+    }
+}
+
+
+/*
+import java.util.ArrayList;
+
+class GenericStack<T>{ 
+	
+	ArrayList<T> sp ;
+	
+    void push( T ele ) { 
+    	sp.add(ele);
+    }
+    
+   T pop( ){ 
+	   if( sp.size() == 0 || sp == null ) { 
+		   return null;
+	   }
+        T ele =  sp.get( sp.size() -1 );
+        sp.remove( sp.size() -1);
+        return ele;
+       
+    }
+   
+   
+    void display(  ){ 
+    	System.out.println( sp.get( sp.size() -1) );
+    }
+	
+   
+   
+	GenericStack(  ){ 
+		sp = new ArrayList<>();
+	}
+	
+	
+	
+	
+}
+
+public class Main {
+
+	public static void main(String[] args) {
+		GenericStack<Integer> stack = new GenericStack();
+		for( int i = 0; i<5; i++ ){ 
+			stack.push( i );
+		}
+		
+		for( int i = 0; i<5; i++ ){ 
+			System.out.println( stack.pop() );
+		}
+		
+		
+
+	}
+
+}
+
+*/

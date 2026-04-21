@@ -1,0 +1,16 @@
+package excel;
+
+import org.apache.poi.ss.usermodel.Workbook;
+
+public class Excel {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Workbook wb = new XSSFWorkbook();
+		Sheet sheet = wb.createSheet("Employees");
+		
+
+	}
+
+}

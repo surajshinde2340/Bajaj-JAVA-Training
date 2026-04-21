@@ -1,0 +1,12 @@
+package excel;
+
+import java.util.Date;
+
+public class BillBoard {
+	int billNo;
+	Date billDate;
+	String Product;
+	int quantity;
+	double total;
+
+}

@@ -1,0 +1,22 @@
+package excel;
+
+import java.util.*;
+
+public class Main { 
+	
+	
+	 public static void main(String[] args) throws Exception {
+		 Scanner sc = new Scanner(System.in);
+		 int ch = 0;
+		 do{ 
+			 System.out.println( "  Enter Customer id " );
+			 int id = sc.nextInt();
+			 System.out.println(" Name :- ");
+			 
+			 
+			 
+		 }while( ch != 10 );
+		
+	 }
+
+}

@@ -1,0 +1,38 @@
+package com.bajaj;
+
+import java.util.ArrayList;
+
+class GenericStack<T>{ 
+	
+	ArrayList<T> sp ;
+	
+    void push( T ele ) { 
+    	sp.add(ele);
+    }
+    
+   T pop( ){ 
+	   if( sp.size() == 0 || sp == null ) { 
+		   return null;
+	   }
+       return sp.get( sp.size() -1 );	
+    }
+	
+   
+   
+	GenericStack(  ){ 
+		sp = new ArrayList<>();
+	}
+	
+	
+	
+	
+}
+
+public class Main {
+
+	public static void main(String[] args) {
+		GenericStack<Integer> stack = new GenericStack(); 
+
+	}
+
+}

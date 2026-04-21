@@ -1,0 +1,32 @@
+package com.Day4.org;
+import static java.lang.Math.*;
+//import static java.util.*;
+
+interface MyInterface{ 
+	void sayHello();
+}
+
+
+
+public class Main {
+	
+	public static void main( String args[] ) {
+		
+		//static import 
+		System.out.println(min( 4 , 11 ));
+		System.out.println("ji ");
+		
+		
+		
+		// lambada expression 
+		MyInterface obj = ()->System.out.println(" hello from lambada ");
+		obj.sayHello();
+		
+		
+		
+		
+		
+	}
+
+}
+

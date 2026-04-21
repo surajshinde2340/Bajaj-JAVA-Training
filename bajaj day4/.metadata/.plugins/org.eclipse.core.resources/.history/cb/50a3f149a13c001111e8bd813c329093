@@ -1,0 +1,82 @@
+package excel;
+
+import java.util.*;
+
+public class Main { 
+	
+	
+	 public static void main(String[] args) throws Exception {
+		 
+
+	        String url = "jdbc:mysql://localhost:3306/testdb";
+	        String username = "root";
+	        String password = "manager";
+
+	        try {
+	            // 1. Load Driver (optional in newer versions)
+	            Class.forName("com.mysql.cj.jdbc.Driver");
+
+	            // 2. Create Connection
+	            Connection con = DriverManager.getConnection(url, username, password);
+
+	            // 3. Create Statement
+	            Statement stmt = con.createStatement();
+
+	            // 4. Execute INSERT
+	            String insertQuery = "INSERT INTO employee (id, name, salary) VALUES (1, 'Suraj', 50000)";
+	            int rows = stmt.executeUpdate(insertQuery);
+	            System.out.println("Inserted rows: " + rows);
+
+	            // 5. Execute SELECT
+	            String selectQuery = "SELECT * FROM employee";
+	            ResultSet rs = stmt.executeQuery(selectQuery);
+
+	            // 6. Process Result
+	            while (rs.next()) {
+	                int id = rs.getInt("id");
+	                String name = rs.getString("name");
+	                double salary = rs.getDouble("salary");
+
+	                System.out.println(id + " " + name + " " + salary);
+	            }
+
+	            // 7. Close Connection
+	            con.close();
+
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	        }
+		 
+		 
+		 ///////////////
+		 Scanner sc = new Scanner(System.in);
+		 int ch = 0;
+		 do{ 
+			
+			 
+	      switch( ch ) { 
+	      case 1 :  { 
+	    	  	System.out.println( "  Enter Customer id " );
+				 int id = sc.nextInt();
+				 System.out.println(" Name :- ");
+				 String name = sc.next();
+				 System.out.println(" Address ");
+				 String add = sc.next();
+				 System.out.println("Mobile No ");
+				 long no = sc.nextLong(); 
+	    	  
+	      }
+	      break;
+	      
+	      
+	      
+	      			}
+			 
+			 
+			 
+			 
+		 }while( ch != 10 );
+		
+	 }
+
+}

@@ -1,0 +1,91 @@
+package excel;
+
+import java.sql.*;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) throws Exception {
+
+        String url = "jdbc:mysql://localhost:3306/world";
+        String username = "root";
+        String password = "manager";
+
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        Connection con = DriverManager.getConnection(url, username, password);
+
+        Scanner sc = new Scanner(System.in);
+        int ch = 0;
+
+        do {
+            System.out.println("\n===== MENU =====");
+            System.out.println("1 Add Customer");
+            System.out.println("2 Display Customer");
+            System.out.println("3 Find Customer");
+            System.out.println("4 Generate Report");
+            System.out.println("5 Find Most Valuable Bill");
+            System.out.println("6 Exit");
+
+            System.out.print("Enter choice: ");
+            ch = sc.nextInt();
+            sc.nextLine(); // clear buffer
+
+            switch (ch) {
+
+                case 1: {
+                    System.out.print("Enter Customer id: ");
+                    int id = sc.nextInt();
+                    sc.nextLine();
+
+                    System.out.print("Name: ");
+                    String name = sc.nextLine();
+
+                    System.out.print("Address: ");
+                    String add = sc.nextLine();
+
+                    System.out.print("Mobile No: ");
+                    long no = sc.nextLong();
+
+                    String query = "INSERT INTO customer (custId, custName, custAddress, mobile) VALUES (?, ?, ?, ?)";
+                    PreparedStatement ps = con.prepareStatement(query);
+
+                    ps.setInt(1, id);
+                    ps.setString(2, name);
+                    ps.setString(3, add);
+                    ps.setLong(4, no);
+
+                    int rows = ps.executeUpdate();
+                    System.out.println(rows + " customer added successfully!");
+                    break;
+                }
+
+                case 2: {
+                    String query = "SELECT * FROM customer";
+                    Statement stmt = con.createStatement();
+                    ResultSet rs = stmt.executeQuery(query);
+
+                    System.out.println("\n--- Customer List ---");
+                    while (rs.next()) {
+                        System.out.println(
+                                rs.getInt("custId") + " | " +
+                                rs.getString("custName") + " | " +
+                                rs.getString("custAddress") + " | " +
+                                rs.getLong("mobile")
+                        );
+                    }
+                    break;
+                }
+
+                case 6:
+                    System.out.println("Exiting...");
+                    break;
+
+                default:
+                    System.out.println("Invalid choice!");
+            }
+
+        } while (ch != 6);
+
+        con.close();
+    }
+}

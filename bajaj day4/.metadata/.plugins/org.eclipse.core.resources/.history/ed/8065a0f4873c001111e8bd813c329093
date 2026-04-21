@@ -1,0 +1,45 @@
+package excel;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
+
+public class ExcelReading {
+	
+	public static void main(String[] args) throws IOException {
+		
+		
+
+		FileInputStream fis = new FileInputStream("employees.xlsx");
+		Workbook wb2 = WorkbookFactory.create(fis);
+		Sheet sheet = wb2.getSheetAt(0);
+		for( Row row : sheet ) { 
+			 
+			for( Cell cell : row ) { 
+				switch( cell.getCellType() ) { 
+				
+				case STRING:
+					System.out.println( cell.getStringCellValue() + "  " );
+					break;
+					
+				case NUMERIC:
+					System.out.println( cell.getStringCellValue() + "  " );
+					break;		
+				
+				}
+			}
+			System.out.println();
+			
+		}
+		
+		wb2.close();
+		fis.close();
+		
+	}
+
+}
