@@ -1,0 +1,27 @@
+
+package model;
+
+import java.util.*;
+
+public class Customer {
+    public int custId;
+    public String custName;
+    public String custAddress;
+    public String custMobile;
+    public List<BillBook> bills = new ArrayList<>();
+
+    public Customer(int custId, String custName, String custAddress, String custMobile) {
+        this.custId = custId;
+        this.custName = custName;
+        this.custAddress = custAddress;
+        this.custMobile = custMobile;
+    }
+
+    public void addBill(BillBook b) {
+        bills.add(b);
+    }
+
+    public double getTotalAmount() {
+        return bills.stream().mapToDouble(x -> x.totalAmount).sum();
+    }
+}

@@ -1,0 +1,39 @@
+
+
+package util;
+
+import model.Customer;
+import org.apache.poi.xssf.usermodel.*;
+import java.io.FileOutputStream;
+import java.util.List;
+
+public class ExcelUtil {
+
+    public static void generate(List<Customer> list) {
+
+        try (XSSFWorkbook wb = new XSSFWorkbook()) {
+
+            XSSFSheet sheet = wb.createSheet("Report");
+
+            int rowNum = 0;
+
+            for (Customer c : list) {
+                var row = sheet.createRow(rowNum++);
+                row.createCell(0).setCellValue(c.custId);
+                row.createCell(1).setCellValue(c.custName);
+                row.createCell(2).setCellValue(c.getTotalAmount());
+            }
+
+            FileOutputStream fos = new FileOutputStream("report.xlsx");
+            wb.write(fos);
+
+            System.out.println("Excel Generated!");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+
+

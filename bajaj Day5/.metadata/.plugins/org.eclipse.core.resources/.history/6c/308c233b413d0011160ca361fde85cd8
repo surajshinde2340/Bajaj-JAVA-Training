@@ -1,0 +1,13 @@
+package com.bajaj.day5;
+
+import java.util.ArrayList;
+
+public class Project {
+	String name;
+	String Manager;
+	ArrayList<String> member ;
+	Date job
+	
+	
+ 
+}

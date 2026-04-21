@@ -1,0 +1,17 @@
+package com.bajaj.day5;
+
+public class Properties {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+       Properties ps = new Properties();
+       ps.put("Math" , "suraj" );
+       ps.put("Science" , "suraj" );
+       ps.put("English" , "suraj" );
+       
+       System.out.println( ps.getPropertir );
+       
+       
+	}
+
+}

@@ -1,0 +1,56 @@
+package com.bajaj.day5;
+
+import java.util.HashSet;
+import java.util.Objects;
+
+class Book{ 
+	int id;
+	String name;
+	String Authore;
+	public Book(int id, String name, String authore) {
+		
+		this.id = id;
+		this.name = name;
+		Authore = authore;
+	}
+	@Override
+	public int hashCode() {
+		return Objects.hash(Authore);
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Book other = (Book) obj;
+		return Objects.equals(Authore, other.Authore) && id == other.id && Objects.equals(name, other.name);
+	}
+	
+	
+	
+}
+
+public class HashCode {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String str = "mysql DMC";
+		int num =  str.hashCode();
+		String prefix = "HASH";
+		System.err.println( prefix + num  );
+		
+		
+		// 
+		HashSet<Book> list = new HashSet<>();
+		list.add( new Book(  1 , "ABC"  , "XYZ" ));
+		
+		
+		System.out.println( list );
+		
+
+	}
+
+}

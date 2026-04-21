@@ -1,0 +1,13 @@
+package com.bajaj.day5;
+import java.util.*;
+public class MainProject {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ArrayList<Project> member = new ArrayList<>();
+		ArrayList<String> member = new ArrayList<>();
+		member.add( "Anand");
+
+	}
+
+}

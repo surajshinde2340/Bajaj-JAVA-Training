@@ -1,0 +1,17 @@
+package com.bajaj.day5; 
+
+class Book{}
+
+public class HashCode {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String str = "mysql DMC";
+		int num =  str.hashCode();
+		String prefix = "HASH";
+		System.err.println( prefix + num  );
+		
+
+	}
+
+}

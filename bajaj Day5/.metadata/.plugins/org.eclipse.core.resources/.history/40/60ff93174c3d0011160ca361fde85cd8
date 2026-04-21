@@ -1,0 +1,23 @@
+package com.bajaj.day5;
+
+class NameComparator implements Comparator<Student> {
+    public int compare(Student s1, Student s2) {
+        return s1.name.compareTo(s2.name); // sort by name
+    }
+}
+
+public class Sort {
+    public static void main(String[] args) {
+        List<Student> list = new ArrayList<>();
+        list.add(new Student(22, "A"));
+        list.add(new Student(18, "C"));
+        list.add(new Student(25, "B"));
+
+        Collections.sort(list, new NameComparator());
+
+        for (Student s : list) {
+            System.out.println(s.age + " " + s.name);
+        }
+    }
+}
+

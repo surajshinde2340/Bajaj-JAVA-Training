@@ -1,0 +1,27 @@
+package com.bajaj.day5;
+
+import java.util.*;
+
+public class TestEnum {
+    public static void main(String[] args) {
+       
+    	
+        Vector<String> v = new Vector<>();
+        v.add("Apple");
+        v.add("Banana");
+        v.add("Mango");
+        v.add("Banana");
+        v.add("Mango");
+
+        Enumeration<String> e = v.elements();
+        System.out.println(e);
+
+        while(e.hasMoreElements()) {
+            System.out.println(e.nextElement());
+        }
+        
+        
+        
+        
+    }
+}

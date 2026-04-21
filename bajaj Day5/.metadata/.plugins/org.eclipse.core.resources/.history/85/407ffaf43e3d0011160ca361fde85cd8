@@ -1,0 +1,16 @@
+package com.bajaj.day5;
+
+
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		ArrayList<Integer>  sp =  new ArrayList<>();
+		
+		
+
+	}
+
+}

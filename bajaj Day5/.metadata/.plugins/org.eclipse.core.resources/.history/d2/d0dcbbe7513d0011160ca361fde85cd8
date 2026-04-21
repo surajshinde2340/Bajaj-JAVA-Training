@@ -1,0 +1,14 @@
+package com.bajaj.day5; 
+
+class hash{}
+
+public class HashCode {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String str = "aa";
+		System.err.println( str.hashCode()  );
+
+	}
+
+}

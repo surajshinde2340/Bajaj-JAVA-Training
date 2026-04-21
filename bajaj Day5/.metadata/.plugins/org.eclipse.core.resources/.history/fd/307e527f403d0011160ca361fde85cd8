@@ -1,0 +1,11 @@
+package com.bajaj.day5;
+
+public class MainProject {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ArrayList<Project> member = new ArrayList<>();
+
+	}
+
+}
